@@ -6,12 +6,11 @@ class ControladorUsuarios{
 
 		if(isset($_POST["ingUsuario"])){
 
-			if(preg_match('/^[a-zA-Z0-9]+$/', $_POST["ingUsuario"]) &&
-			   preg_match('/^[a-zA-Z0-9]+$/', $_POST["ingPassword"])){
+			if(preg_match("/^([a-zA-Z0-9\.]+@+[a-zA-Z]+(\.)+[a-zA-Z]{2,3})$/", $_POST["ingUsuario"])){
 
 				$tabla = "usuario";
 
-				$item = "nombre";
+				$item = "email";
 				$valor = $_POST["ingUsuario"];
 
 				$respuesta = ModeloUsuarios::MdlMostrarUsuarios($tabla, $item, $valor);
@@ -19,23 +18,28 @@ class ControladorUsuarios{
 				if(is_array($respuesta)){
 
 
-				if($respuesta["nombre"] == $_POST["ingUsuario"] && $respuesta["password"] == $_POST["ingPassword"]){
+					if($respuesta["email"] == $_POST["ingUsuario"] && $respuesta["password"] == $_POST["ingPassword"]){
 
-					$_SESSION["iniciarSesion"] = "ok";
+						$_SESSION["iniciarSesion"] = "ok";
 
-					echo '<script>
+						echo '<script>
 
-						window.location = "inicio";
+							window.location = "inicio";
 
-					</script>';
-				}
+						</script>';
+					}else{
+						echo '<br><div class="alert alert-danger">Error: correo o contraseña incorrecta</div>';
+					}
+				
 				}else{
 
-					echo '<br><div class="alert alert-danger">Error al ingresar, vuelve a intentarlo</div>';
+					echo '<br><div class="alert alert-danger">El usuario no existe</div>';
 
 				}
 
 
+			}else{
+				echo '<br><div class="alert alert-danger">Digite un correo valido</div>';
 			}	
 
 		}
