@@ -28,18 +28,20 @@ class ControladorUsuarios{
 
 						</script>';
 					}else{
-						echo '<br><div class="alert alert-danger">Error: correo o contraseña incorrecta</div>';
+						//echo '<br><div class="alert alert-danger">Error: correo o contraseña incorrecta</div>';
+						echo '<script>alert("Error: correo y contraseña incorrectas")</script>';
 					}
 				
 				}else{
 
-					echo '<br><div class="alert alert-danger">El usuario no existe</div>';
-
+					//echo '<br><div class="alert alert-danger">El usuario no existe</div>';
+					echo '<script>alert("El usuario no existe")</script>';
 				}
 
 
 			}else{
-				echo '<br><div class="alert alert-danger">Digite un correo valido</div>';
+				//echo '<br><div class="alert alert-danger" role="alert">Digite un correo valido</div>';
+				echo '<script>alert("Digite un correo valido")</script>';
 			}	
 
 		}
