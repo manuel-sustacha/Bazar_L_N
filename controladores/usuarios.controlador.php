@@ -16,9 +16,8 @@ class ControladorUsuarios{
 				$respuesta = ModeloUsuarios::MdlMostrarUsuarios($tabla, $item, $valor);
 
 				if(is_array($respuesta)){
-
-
-					if($respuesta["email"] == $_POST["ingUsuario"] && $respuesta["password"] == $_POST["ingPassword"]){
+					//$passwprdEncrypt=password_hash($respuesta["password"],PASSWORD_DEFAULT);
+					if(password_verify($_POST["ingPassword"],$respuesta["password"])){
 
 						$_SESSION["iniciarSesion"] = "ok";
 
