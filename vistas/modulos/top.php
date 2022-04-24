@@ -64,7 +64,7 @@
               <!-- Menu Footer-->
               <li class="user-footer">
                 <div class="pull-right">
-                  <a href="#" class="btn btn-default btn-flat">SALIR</a>
+                  <a href="salir" class="btn btn-default btn-flat">SALIR</a>
                 </div>
               </li>
             </ul>
