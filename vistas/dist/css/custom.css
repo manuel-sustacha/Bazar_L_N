@@ -1,0 +1,32 @@
+body{
+  
+    background-image:url("../img/tienda.jpg") !important ;
+    background-repeat: no-repeat !important;
+    background-size: cover !important;
+}
+.login-page, .register-page {
+    /* top: 30%; */
+}
+.login-box{
+   
+    /* margin-top: 15%; */
+    padding-top: 30px;
+    background-color: rgb(255, 255, 255);
+    border-radius:30px;
+    box-shadow: 3px 3px 10px rgb(127, 127, 127);
+    
+}
+.input-style{
+border-radius: 30px ;
+/* border:solid 10px red; */
+}
+.btn-round{
+    border-radius: 30px !important;
+    /* border:solid 10px red; */
+    }
+.login-box-body,
+.register-box-body {
+  background: none;
+  
+ 
+}
