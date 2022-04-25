@@ -28,6 +28,12 @@
 					<span>Productos</span>
 				</a>
 			</li>
+			<li>
+				<a href="proveedores">
+					<i class="fa fa-product-hunt"></i>
+					<span>Proveedores</span>
+				</a>
+			</li>
 
 			<li>
 				<a href="clientes">
