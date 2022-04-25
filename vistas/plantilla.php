@@ -34,7 +34,10 @@ session_start();
 
   <!-- Google Font -->
   <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,600,700,300italic,400italic,600italic">
+  <!-- DataTable-->
+  <link rel="stylesheet" href="vistas/bower_components/datatables.net-bs/css/dataTables.bootstrap.julio.css">
 
+  <!-- <link rel="stylesheet" type="text/css" href="//cdn.datatables.net/1.10.9/css/dataTables.jqueryui.css"> -->
   <!--PLUGINS DE JAVASCRIPT-->
 
   <!-- jQuery 3 -->
@@ -48,7 +51,11 @@ session_start();
   
   <!-- AdminLTE App -->
   <script src="vistas/dist/js/adminlte.min.js"></script>
+  <!-- DataTable -->
 
+  <script src="vistas/bower_components/dataTables.net/js/jquery.dataTables.js"></script>
+
+  <!-- <script type="text/javascript" src="//cdn.datatables.net/1.9/js/jquery.dataTables.min.js"></script>-->
 </head>
 
 <!--CUERPO DOCUMENTO-->
@@ -77,6 +84,7 @@ session_start();
          $_GET["ruta"] == "usuarios" ||
          $_GET["ruta"] == "categorias" ||
          $_GET["ruta"] == "productos" ||
+         $_GET["ruta"] == "proveedores" ||
          $_GET["ruta"] == "clientes" ||
          $_GET["ruta"] == "ventas" ||
          $_GET["ruta"] == "crear-venta" ||
@@ -111,7 +119,23 @@ session_start();
 
   ?>
 
-
-<script src="vistas/js/plantilla.js"></script>
+<script> 
+$(document).ready(function() {
+    $('#example').DataTable( {
+        "columnDefs": [
+            {
+                "targets": [ 2 ],
+                "visible": false,
+                "searchable": false
+            },
+            {
+                "targets": [ 3 ],
+                "visible": false
+            }
+        ]
+    } );
+} );
+</script>
+<!-- <script src="vistas/js/plantilla.js"></script> -->
 </body>
 </html>
