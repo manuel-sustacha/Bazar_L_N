@@ -28,7 +28,7 @@ class ControladorUsuarios{
 						</script>';
 					}else{
 						//echo '<br><div class="alert alert-danger">Error: correo o contraseña incorrecta</div>';
-						echo '<script>alert("Error: correo o contraseña incorrectas")</script>';
+						echo '<script>alert("Error: correo y contraseña incorrectas")</script>';
 					}
 				
 				}else{
