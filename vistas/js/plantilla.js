@@ -3,4 +3,4 @@ SideBar Menu
 =============================================*/
 
 /*$('.sidebar-menu').tree()*/
-$('.tabladatatable').DataTable();
+$('.table.dataTable').DataTable();

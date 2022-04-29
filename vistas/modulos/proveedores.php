@@ -98,16 +98,15 @@
     </ol>
 
   </section>
-  <div class="card-header">
-                              <button type="button" style="background:purple ; color:#ffffff" class="btn" data-toggle="modal" data-target="#mdlProveedor">Registrar Nuevo Proveedor</button>
-                          </div>
   <!-- Main content -->
 
 
-
+  <div class="card-header">
+                              <button type="button" style="background:purple ; color:#ffffff" class="btn" data-toggle="modal" data-target="#mdlProveedor">Registrar Nuevo Proveedor</button>
+                          </div>
 <div>
 
-<table class="table table-striped">
+<table class="table table-striped table-bordered" style="width:100%">
         <thead>
             <tr>
                 <th scope="col">id</th>
