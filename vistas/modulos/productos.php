@@ -4,7 +4,7 @@
     
     <h1>
       
-      Administrar productos JULIO CESAR
+      Administrar Productos
     
     </h1>
 
@@ -24,7 +24,7 @@
     <!-- Default box -->
     <div class="box">
       <div class="box-header with-border">
-        <h3 class="box-title">Title</h3>
+        <h3 class="box-title">Productos</h3>
 
         <div class="box-tools pull-right">
           <button type="button" class="btn btn-box-tool" data-widget="collapse" data-toggle="tooltip"
@@ -34,10 +34,39 @@
             <i class="fa fa-times"></i></button>
         </div>
       </div>
+      
       <div class="box-body">
-        Start creating your amazing application!
+        <div class="container-fluid">
+          <!-- AREA DE BUSQUEDA -->
+          <div class="row">
+            <div class="col-lg-12"></div>
+          </div>
+
+          <!-- AREA DE LA TABLA -->
+          <div class="row">
+            <div class="col-lg-12">
+              <table id="tbl_productos" class="table table-striped w-100 shadow">
+                <thead>
+                  <tr>
+                    <th>Id</th>
+                    <th>Nombre</th>
+                    <th>Descripción</th>
+                    <th>Estado</th>
+                    <th>Fecha Actualización</th>
+                    <th>Fecha Eliminación</th>
+                    <th>Id Categoria</th>
+                    <th class="text-center">Opciones</th>
+                  </tr>
+                </thead>
+              </table>
+            </div>
+          </div>
+
+        </div>
       </div>
       <!-- /.box-body -->
+      
+      
       <div class="box-footer">
         Footer
       </div>
@@ -49,3 +78,10 @@
   <!-- /.content -->
 </div>
 <!-- /.content-wrapper -->
+
+<script>
+  $(document).ready(function(){
+    var table;
+    table = $("tbl_productos").DataTable();
+  })
+</script>
