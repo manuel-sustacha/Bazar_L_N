@@ -55,6 +55,7 @@
                     <th>Fecha Actualización</th>
                     <th>Fecha Eliminación</th>
                     <th>Id Categoria</th>
+                    <th>Id Proveedor</th>
                     <th class="text-center">Opciones</th>
                   </tr>
                 </thead>
@@ -82,6 +83,35 @@
 <script>
   $(document).ready(function(){
     var table;
-    table = $("tbl_productos").DataTable();
+
+    $.ajax({
+      url:"ajax/productos.ajax.php",
+      type:"POST",
+      data:{'accion' :1}, //1 es listar productos
+      //dataType:'json',
+      success:function(respuesta){
+        console.log("respuesta", respuesta);
+      }
+    });
+
+    table = $("#tbl_productos").DataTable({
+      ajax:{
+        url:"ajax/productos.ajax.php",
+        dataSrc:'',
+        type:"POST",
+        data:{'accion' :1}, //1 es listar productos
+      
+      },
+
+      responsive:{
+        details:{
+          type:'column'
+        }
+      },
+
+      languaje:{
+        url:"//cdn.datatables.net/plug-ins/1.10.20/i18n/Spanish.json"
+      }
+    });
   })
 </script>
