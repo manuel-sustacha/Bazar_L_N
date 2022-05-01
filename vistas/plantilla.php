@@ -118,7 +118,6 @@ session_start();
   }
 
   ?>
-
 <script> 
 $(document).ready(function() {
     $('#example').DataTable( {
@@ -136,6 +135,7 @@ $(document).ready(function() {
     } );
 } );
 </script>
+
 <!-- <script src="vistas/js/plantilla.js"></script> -->
 </body>
 </html>
