@@ -56,9 +56,12 @@
                     <th>Fecha Eliminación</th>
                     <th>Id Categoria</th>
                     <th>Id Proveedor</th>
-                    <th class="text-center">Opciones</th>
+                    <th>Opciones</th>
                   </tr>
                 </thead>
+                <tbody class="text-small">
+
+                </tbody>
               </table>
             </div>
           </div>
@@ -68,9 +71,9 @@
       <!-- /.box-body -->
       
       
-      <div class="box-footer">
+      <!-- <div class="box-footer">
         Footer
-      </div>
+      </div>-->
       <!-- /.box-footer-->
     </div>
     <!-- /.box -->
@@ -94,7 +97,23 @@
       }
     });
 
+    //datatable de paginacion cantidad de registros y busqueda
     table = $("#tbl_productos").DataTable({
+      dom: 'Bfrtip',
+      
+      buttons:[
+        {
+          text: 'Agregar Producto',
+          //className: 'addNewRecord',
+          //action function(e, dt, node, config){
+            //aqui ira la ventana modal de agregar producto
+            //alert('nuevo boton')
+          //}
+        },
+        //'excel', 'pdf', 'print', 
+        'pageLength'
+      ],
+
       ajax:{
         url:"ajax/productos.ajax.php",
         dataSrc:'',
@@ -108,6 +127,36 @@
           type:'column'
         }
       },
+
+      columnDefs:[
+        {
+          targets:3,
+          visible:true
+        },
+        {
+          targets:6,
+          visible:true
+        },
+        {
+          targets:7,
+          visible:true
+        },
+        {
+          targets:8,
+          orderable: false,
+          render: function(datqa, type, full, meta){
+            return "<center>"+
+                      "<span class:'btnEditarProducto text-primary px-2' style='cursor:pointer;'>"+
+                        "<i class='fas fa-pencil-alt fs-5'></i>"+
+                      "</span>"+
+
+                      "<span class:'btnEliminarProducto text-danger px-2' style='cursor:pointer;'>"+
+                        "<i class='fas fa-trash fs-5'></i>"+
+                      "</span>"+
+                    "</center>"
+          }
+        }
+      ],
 
       languaje:{
         url:"//cdn.datatables.net/plug-ins/1.10.20/i18n/Spanish.json"

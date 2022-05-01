@@ -36,7 +36,14 @@ session_start();
   <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,600,700,300italic,400italic,600italic">
   <!-- DataTable-->
   <link rel="stylesheet" href="vistas/bower_components/datatables.net-bs/css/dataTables.bootstrap.julio.css">
+  
+  <!-- CDN DataTable-->
+  <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/1.11.5/css/jquery.dataTables.css">
 
+  <!--NUEVO DATATABLES-->
+  <link rel="stylesheet" href="vistas/vistas\bower_components\datatables\datatables.min.css">
+  <link rel="stylesheet" href="vistas/vistas\bower_components\datatables\DataTables-1.11.5\css\dataTables.bootstrap4.min.css">
+  
   <!-- <link rel="stylesheet" type="text/css" href="//cdn.datatables.net/1.10.9/css/dataTables.jqueryui.css"> -->
   <!--PLUGINS DE JAVASCRIPT-->
 
@@ -81,6 +88,9 @@ session_start();
   <script src="vistas/bower_components/dataTables.net/js/jquery.dataTables.js"></script>
 
   <!-- <script type="text/javascript" src="//cdn.datatables.net/1.9/js/jquery.dataTables.min.js"></script>-->
+  <!-- FONTAWEWSOME CDN -->
+  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.15.4/css/all.css" integrity="sha384-DyZ88mC6Up2uqS4h/KRgHuoeGwBcD4Ng9SiP4dIRy0EXTlnuz47vAwmeGwVChigm" crossorigin="anonymous"/>
+
 </head>
 
 <!--CUERPO DOCUMENTO-->
@@ -162,5 +172,18 @@ $(document).ready(function() {
 } );
 </script>
 <!-- <script src="vistas/js/plantilla.js"></script> -->
+
+<!-- NUEVAS LIBRERIAS CDN DATATABLE -->
+<script type="text/javascript" charset="utf8" src="https://cdn.datatables.net/1.11.5/js/jquery.dataTables.js"></script>
+
+
+<!-- NUEVAS LIBRERIAS COLOCADAS -->
+<script src="vistas/bower_components/datatables/datatables.min.js"></script>
+
+<script src="vistas/bower_components/datatables/Buttons-2.2.2/js/dataTables.buttons.min.js"></script>
+<script src="vistas/bower_components/datatables/JSZip-2.5.0/jszip.min.js"></script>
+<script src="vistas/bower_components/datatables/pdfmake-0.1.36/pdfmake.min.js"></script>
+<script src="vistas/bower_components/datatables/pdfmake-0.1.36/vfs_fonts.js"></script>
+<script src="vistas/bower_components/datatables/Buttons-2.2.2/js/buttons.html5.min.js"></script>
 </body>
 </html>
