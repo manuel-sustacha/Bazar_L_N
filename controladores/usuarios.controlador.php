@@ -63,7 +63,7 @@ class ControladorUsuarios{
 				$respuesta = ModeloUsuarios::mdlCrearUsuario($tabla, $datos);
 			
 			if($respuesta == "ok"){
-				echo '<script>alert("EXITO: El Usuario ha sido Creado!!")</script>';
+				echo '<script>alert("Usuario creado exitosamente!!")</script>';
 				echo '<script>
 							window.location = "usuarios";
 						</script>';				
