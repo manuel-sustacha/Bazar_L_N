@@ -23,7 +23,7 @@
     <div class="box">
 
       <div class="box-header with-border">
-        <button class="btn btn-success" data-toggle="modal" data-target="#modal_crear_usuario">
+        <button class="btn btn-warning" data-toggle="modal" data-target="#modal_crear_usuario">
           <i class="fa fa-user-plus"></i>
           Agregar Usuario
 
@@ -33,7 +33,7 @@
 
       <div class="box-body">
 
-        <table class="table table-bordered table-striped dt-responsive tablas" width="100%">
+        <table class="table table-bordered table-striped dt-responsive tablas" id="tablas" width="100%">
 
           <thead>
 
@@ -52,8 +52,6 @@
 
           </thead>
           <tbody>
-            <!-- CREAR USUARIOS -->
-
             <!-- LISTAR USUARIOS -->
             <?php
 
@@ -71,27 +69,34 @@
                     <td class="text-uppercase">' . $value["nombre"] . '</td>
                     <td class="text-uppercase">' . $value["apellido"] . '</td>
                     <td class="text-uppercase">' . $value["telefono"] . '</td>
-                    <td class="text-uppercase">' . $value["email"] . '</td>
+                    <td class="text">' . $value["email"] . '</td>
                     <td class="text-uppercase">' . $value["rol"] . '</td>
-                    <td class="text-uppercase">' . $value["usuarioest"] . '</td>
+                    ';
 
-                    <td>
+                  if($value["estado"] != 0){
 
-                      <div class="btn-group">
-                          
-                        <button class="btn btn-primary btnEditarUsuario" idUsuario="' . $value["id_usuario"] . '" data-toggle="modal" data-target="#modal_editar_usuario"><i class="fa fa-pencil"></i></button>';
+                    echo '<td><button class="btn btn-success btn-xs btnActivar" idUsuario="'.$value["id_usuario"].'" estado="act">ACTIVO</button></td>';
 
-              echo '</div>
-                        
-                        <div class="btn-group">
-                          
-                        <button class="btn btn-danger btnEliminarUsuario" idUsuario="' . $value["id_usuario"] . '" data-toggle="modal" data-target="#modal_eliminar_usuario"><i class="fa fa-trash"></i></button>';
+                  }else{
 
-              echo '</div> 
+                    echo '<td><button class="btn btn-danger btn-xs btnActivar" idUsuario="'.$value["id_usuario"].'" estado="ina">INACTIVO</button></td>';
 
-                    </td>
+                  } 
+                  echo  
+                  '<td>
 
-                  </tr>';
+                    <div class="btn-group">
+                      
+                      <button class="btn btn-warning btnEditarUsuario" idUsuario="'.$value["id_usuario"].'" data-toggle="modal" data-target="#modalEditarUsuario"><i class="fa fa-pencil"></i></button>
+
+                      <button class="btn btn-danger btnEliminarUsuario" idUsuario="'.$value["id_usuario"].'"><i class="fa fa-trash"></i></button>
+
+                    </div>  
+
+                  </td>
+
+                </tr>';
+                  
             }
 
             ?>
@@ -227,3 +232,4 @@
 
   </div>
 </div>
+<script src="vistas/js/plantilla.js"></script>

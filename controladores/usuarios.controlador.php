@@ -63,12 +63,49 @@ class ControladorUsuarios{
 				$respuesta = ModeloUsuarios::mdlCrearUsuario($tabla, $datos);
 			
 			if($respuesta == "ok"){
-				echo '<script>alert("Usuario creado exitosamente!!")</script>';
 				echo '<script>
+
+					swal({
+
+						type: "success",
+						title: "¡El usuario ha sido guardado correctamente!",
+						showConfirmButton: true,
+						confirmButtonText: "Cerrar"
+
+					}).then(function(result){
+
+						if(result.value){
+						
 							window.location = "usuarios";
-						</script>';				
+
+						}
+
+					});
+				
+
+					</script>';				
 			}else{
-				echo '<script>alert("ERROR: No se pudo crear al usuario")</script>';
+				echo '<script>
+
+					swal({
+
+						type: "error",
+						title: "El usuario no fue registrado",
+						showConfirmButton: true,
+						confirmButtonText: "Cerrar"
+
+					}).then(function(result){
+
+						if(result.value){
+						
+							window.location = "usuarios";
+
+						}
+
+					});
+				
+
+				</script>';
 			}
 			
 		}

@@ -15,7 +15,9 @@ session_start();
 
   <link rel="icon" href="vistas/img/plantilla/icono-negro.png">
 
-   <!--PLUGINS DE CSS-->
+  <!--=====================================
+  PLUGINS DE CSS
+  ======================================-->
 
   <!-- Bootstrap 3.3.7 -->
   <link rel="stylesheet" href="vistas/bower_components/bootstrap/dist/css/bootstrap.min.css">
@@ -28,17 +30,29 @@ session_start();
 
   <!-- Theme style -->
   <link rel="stylesheet" href="vistas/dist/css/AdminLTE.css">
-  <link rel="stylesheet" href="vistas/dist/css/custom.css">
+  
   <!-- AdminLTE Skins -->
   <link rel="stylesheet" href="vistas/dist/css/skins/_all-skins.min.css">
 
   <!-- Google Font -->
   <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,600,700,300italic,400italic,600italic">
-  <!-- DataTable-->
-  <link rel="stylesheet" href="vistas/bower_components/datatables.net-bs/css/dataTables.bootstrap.julio.css">
 
-  <!-- <link rel="stylesheet" type="text/css" href="//cdn.datatables.net/1.10.9/css/dataTables.jqueryui.css"> -->
-  <!--PLUGINS DE JAVASCRIPT-->
+   <!-- DataTables -->
+  <link rel="stylesheet" href="vistas/bower_components/datatables.net-bs/css/dataTables.bootstrap.min.css">
+  <link rel="stylesheet" href="vistas/bower_components/datatables.net-bs/css/responsive.bootstrap.min.css">
+
+  <!-- iCheck for checkboxes and radio inputs -->
+  <link rel="stylesheet" href="vistas/plugins/iCheck/all.css">
+
+   <!-- Daterange picker -->
+  <link rel="stylesheet" href="vistas/bower_components/bootstrap-daterangepicker/daterangepicker.css">
+
+  <!-- Morris chart -->
+  <link rel="stylesheet" href="vistas/bower_components/morris.js/morris.css">
+
+  <!--=====================================
+  PLUGINS DE JAVASCRIPT
+  ======================================-->
 
   <!-- jQuery 3 -->
   <script src="vistas/bower_components/jquery/dist/jquery.min.js"></script>
@@ -51,11 +65,26 @@ session_start();
   
   <!-- AdminLTE App -->
   <script src="vistas/dist/js/adminlte.min.js"></script>
-  <!-- DataTable -->
 
-  <script src="vistas/bower_components/dataTables.net/js/jquery.dataTables.js"></script>
+  <!-- DataTables -->
+  <script src="vistas/bower_components/datatables.net/js/jquery.dataTables.min.js"></script>
+  <script src="vistas/bower_components/datatables.net-bs/js/dataTables.bootstrap.min.js"></script>
+  <script src="vistas/bower_components/datatables.net-bs/js/dataTables.responsive.min.js"></script>
+  <script src="vistas/bower_components/datatables.net-bs/js/responsive.bootstrap.min.js"></script>
 
-  <!-- <script type="text/javascript" src="//cdn.datatables.net/1.9/js/jquery.dataTables.min.js"></script>-->
+  <!-- SweetAlert 2 -->
+  <script src="vistas/plugins/sweetalert2/sweetalert2.all.js"></script>
+   <!-- By default SweetAlert2 doesn't support IE. To enable IE 11 support, include Promise polyfill:-->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/core-js/2.4.1/core.js"></script>
+
+  <!-- iCheck 1.0.1 -->
+  <script src="vistas/plugins/iCheck/icheck.min.js"></script>
+
+  <!-- InputMask -->
+  <script src="vistas/plugins/input-mask/jquery.inputmask.js"></script>
+  <script src="vistas/plugins/input-mask/jquery.inputmask.date.extensions.js"></script>
+  <script src="vistas/plugins/input-mask/jquery.inputmask.extensions.js"></script>
+
 </head>
 
 <!--CUERPO DOCUMENTO-->
@@ -118,24 +147,41 @@ session_start();
   }
 
   ?>
-<script> 
-$(document).ready(function() {
-    $('#example').DataTable( {
-        "columnDefs": [
-            {
-                "targets": [ 2 ],
-                "visible": false,
-                "searchable": false
-            },
-            {
-                "targets": [ 3 ],
-                "visible": false
-            }
-        ]
-    } );
-} );
-</script>
+<!---DATATABLE Y LENGUAJE--->
+<script>
+  $(document).ready( function () {
+  $('#tablas').DataTable();
+  } );
+  $('.tablas').DataTable({
 
-<!-- <script src="vistas/js/plantilla.js"></script> -->
+"language": {
+
+  "sProcessing":     "Procesando...",
+  "sLengthMenu":     "Mostrar _MENU_ registros",
+  "sZeroRecords":    "No se encontraron resultados",
+  "sEmptyTable":     "Ningún dato disponible en esta tabla",
+  "sInfo":           "Mostrando registros del _START_ al _END_ de un total de _TOTAL_",
+  "sInfoEmpty":      "Mostrando registros del 0 al 0 de un total de 0",
+  "sInfoFiltered":   "(filtrado de un total de _MAX_ registros)",
+  "sInfoPostFix":    "",
+  "sSearch":         "Buscar:",
+  "sUrl":            "",
+  "sInfoThousands":  ",",
+  "sLoadingRecords": "Cargando...",
+  "oPaginate": {
+  "sFirst":    "Primero",
+  "sLast":     "Último",
+  "sNext":     "Siguiente",
+  "sPrevious": "Anterior"
+  },
+  "oAria": {
+    "sSortAscending":  ": Activar para ordenar la columna de manera ascendente",
+    "sSortDescending": ": Activar para ordenar la columna de manera descendente"
+  }
+
+}
+
+});
+</script>
 </body>
 </html>

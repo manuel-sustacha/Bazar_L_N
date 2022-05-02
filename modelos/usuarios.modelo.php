@@ -39,12 +39,8 @@ class ModeloUsuarios{
 		$stmt = null;
 	}	
 
-	//---- MODIFICAR USUARIOS ----//
-
 	//---- LISTAR USUARIOS ----// 
-	static public function mdlListarUsuarios($tabla, $item, $valor){
-
-
+	static public function mdlListarUsuarios(){
 			$stmt = Conexion::conectar()->prepare("SELECT 
 			                                       usuario.id_usuario,
 												   usuario.nombre,
@@ -56,18 +52,6 @@ class ModeloUsuarios{
 												   IF(usuario.estado='ina','inactivo','activo') AS usuario_estado
 												   FROM usuario
 												   INNER JOIN roles ON usuario.id_rol = roles.id_rol;");
-
-			$stmt = Conexion::conectar()->prepare("SELECT 
-												   usuario.id_usuario,
-												   usuario.nombre,
-			                                       usuario.apellido,
-			                                       usuario.telefono,
-			                                       usuario.email,
-			                                       roles.nombre AS rol,
-												   usuario.estado, 
-			                                       IF(usuario.estado='ina','inactivo','activo') AS usuarioest
-			                                       FROM usuario
-			                                       INNER JOIN roles ON usuario.id_rol = roles.id_rol;");
 
 			$stmt -> execute();
 
