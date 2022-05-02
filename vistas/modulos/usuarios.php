@@ -23,7 +23,7 @@
     <div class="box">
 
       <div class="box-header with-border">
-        <button class="btn btn-warning" data-toggle="modal" data-target="#modal_crear_usuario">
+        <button class="btn btn-primary" data-toggle="modal" data-target="#modal_crear_usuario">
           <i class="fa fa-user-plus"></i>
           Agregar Usuario
 
@@ -55,35 +55,41 @@
             <!-- LISTAR USUARIOS -->
             <?php
 
-            $item = null;
-            $valor = null;
+        $item = null;
+        $valor = null;
 
-            $usuarios = ControladorUsuarios::ctrListarUsuarios($item, $valor);
+        $usuarios = ControladorUsuarios::ctrMostrarUsuarios($item, $valor);
 
-            foreach ($usuarios as $key => $value) {
+       foreach ($usuarios as $key => $value){
+         
+          echo ' <tr>
+                  <td>'.($key+1).'</td>
+                  <td>'.$value["nombre"].'</td>
+                  <td>'.$value["apellido"].'</td>
+                  <td>'.$value["telefono"].'</td>
+                  <td>'.$value["email"].'</td>
+                  ';
+                  if($value["id_rol"] == "1"){
 
-              echo ' <tr>
-
-                    <td>' . ($key + 1) . '</td>
-
-                    <td class="text-uppercase">' . $value["nombre"] . '</td>
-                    <td class="text-uppercase">' . $value["apellido"] . '</td>
-                    <td class="text-uppercase">' . $value["telefono"] . '</td>
-                    <td class="text">' . $value["email"] . '</td>
-                    <td class="text-uppercase">' . $value["rol"] . '</td>
-                    ';
-
-                  if($value["estado"] != 0){
-
-                    echo '<td><button class="btn btn-success btn-xs btnActivar" idUsuario="'.$value["id_usuario"].'" estado="act">ACTIVO</button></td>';
+                    echo '<td>ADMINISTRADOR</td>';
 
                   }else{
 
-                    echo '<td><button class="btn btn-danger btn-xs btnActivar" idUsuario="'.$value["id_usuario"].'" estado="ina">INACTIVO</button></td>';
+                    echo '<td>VENDEDOR</td>';
 
-                  } 
-                  echo  
-                  '<td>
+                  }
+                  if($value["estado"] != "ina"){
+
+                    echo '<td><button class="btn btn-success btn-xs btnActivar" idUsuario="'.$value["id_usuario"].'" estadoUsuario="act">ACTIVO</button></td>';
+
+                  }else{
+
+                    echo '<td><button class="btn btn-danger btn-xs btnActivar" idUsuario="'.$value["id_usuario"].'" estadoUsuario="ina">INACTIVO</button></td>';
+
+                  }              
+
+                  echo '
+                  <td>
 
                     <div class="btn-group">
                       
@@ -96,10 +102,10 @@
                   </td>
 
                 </tr>';
-                  
-            }
+        }
 
-            ?>
+
+        ?>
 
           </tbody>
         </table>
@@ -161,7 +167,7 @@
         <!--FOOTER MODAL-->
         <div class="modal-footer">
           <button type="button" class="btn btn-default pull-left" data-dismiss="modal">Salir</button>
-          <button type="submit" name="submit" class="btn btn-primary">Guardar</button>
+          <button type="submit" name="submit" class="btn btn-primary">Guardar Datos</button>
         </div>
         <?php
         $crearUsuario = new ControladorUsuarios();
@@ -232,4 +238,3 @@
 
   </div>
 </div>
-<script src="vistas/js/plantilla.js"></script>
