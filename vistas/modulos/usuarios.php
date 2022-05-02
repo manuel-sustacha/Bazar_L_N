@@ -52,7 +52,7 @@
 
           </thead>
           <tbody>
-            <!-- LISTAR USUARIOS -->
+            <!-- MOSTRAR USUARIOS EN TABLA -->
             <?php
 
         $item = null;
@@ -117,7 +117,6 @@
   <!-- /.content -->
 </div>
 <!-- /.content-wrapper -->
-
 
 <!-- MODAL PARA CREAR USUARIO -->
 <div id="modal_crear_usuario" class="modal fade" role="dialog" data-keyboard=""false">

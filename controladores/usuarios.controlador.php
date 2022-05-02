@@ -115,7 +115,7 @@ class ControladorUsuarios{
 			
 	}
 
-	//--- MOSTRAR USUARIOS ---// 
+	//--- CONTROLADOR MOSTRAR USUARIOS ---// 
 	static public function ctrMostrarUsuarios($item, $valor){
 
 		$tabla = "usuario";

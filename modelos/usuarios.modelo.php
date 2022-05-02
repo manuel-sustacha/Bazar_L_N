@@ -23,7 +23,9 @@ class ModeloUsuarios{
 			return "error";
 		}
 		$stmt = null;
-	}	
+	}
+	
+	// MODELO MOSTRAR USUARIOS
 	static public function mdlMostrarUsuarios($tabla, $item, $valor){
 		if($item != null){
 				$stmt = Conexion::conectar()->prepare("SELECT * FROM $tabla WHERE $item = :$item");
@@ -49,28 +51,6 @@ class ModeloUsuarios{
 				$stmt = null;
 		
 			}
-	//---- LISTAR USUARIOS ----// 
-	static public function mdlListarUsuarios(){
-			$stmt = Conexion::conectar()->prepare("SELECT 
-			                                       usuario.id_usuario,
-												   usuario.nombre,
-												   usuario.apellido,
-												   usuario.telefono,
-												   usuario.email,
-												   roles.nombre AS rol,
-												   usuario.estado,
-												   IF(usuario.estado='ina','inactivo','activo') AS usuario_estado
-												   FROM usuario
-												   INNER JOIN roles ON usuario.id_rol = roles.id_rol;");
-
-			$stmt -> execute();
-
-			return $stmt -> fetchAll();
-
-		
-
-		
-	}
 
 	
 
