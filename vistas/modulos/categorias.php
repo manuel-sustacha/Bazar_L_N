@@ -1,19 +1,3 @@
-<?php
-
-/*if($_SESSION["perfil"] == "Vendedor"|| $_SESSION["perfil"] =="Contabilidad" || $_SESSION["perfil"] == "Asistencia-de-Oficina"){
-
-  echo '<script>
-
-    window.location = "inicio";
-
-  </script>';
-
-  return;
-
-}*/
-
-?>
-
 <div class="content-wrapper">
 
   <section class="content-header">
@@ -87,11 +71,10 @@
                           
                         <button class="btn btn-warning btnEditarCategoria" idCategoria="'.$value["id"].'" data-toggle="modal" data-target="#modalEditarCategoria"><i class="fa fa-pencil"></i></button>';
 
-                        //if($_SESSION["perfil"] == "Administrador"){
 
                           echo '<button class="btn btn-danger btnEliminarCategoria" idCategoria="'.$value["id"].'"><i class="fa fa-times"></i></button>';
 
-                        //}
+                        
 
                       echo '</div>  
 
@@ -247,7 +230,7 @@ MODAL EDITAR CATEGORÍA
 
                 <input type="text" class="form-control input-lg" name="editarCategoria" id="editarCategoria" required>
 
-                 <input type="hidden"  name="idCategoria" id="idCategoria" required>
+                 <input type="hidden" name="idCategoria" id="idCategoria" required>
 
               </div>
 
