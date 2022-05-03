@@ -8,7 +8,7 @@ $(".tablas").on("click", ".btnEditarCategoria", function(){
 	var datos = new FormData();
 	datos.append("idCategoria", idCategoria);
 
-	$.ajax({ 
+	$.ajax({
 		url: "ajax/categorias.ajax.php",
 		method: "POST",
       	data: datos,

@@ -10,11 +10,9 @@ class ModeloCategorias{
 
 	static public function mdlIngresarCategoria($tabla, $datos){
 
-		$stmt = Conexion::conectar()->prepare("INSERT INTO $tabla(categoria) VALUES (null, :nombtr, :)");
+		$stmt = Conexion::conectar()->prepare("INSERT INTO $tabla(categoria) VALUES (:categoria)");
 
-		$stmt->bindParam(":nombre", $datos, PDO::PARAM_STR);
-		$stmt->bindParam(":nombre", $datos, PDO::PARAM_STR);
-
+		$stmt->bindParam(":categoria", $datos, PDO::PARAM_STR);
 
 		if($stmt->execute()){
 
