@@ -77,6 +77,24 @@ return;
               </div>
             </div>
             <div class="form-group">
+            <div class="input-group">
+                <span class="input-group-addon"><i class="fa fa-th"></i></span> 
+                <select class="form-control input-lg" id="nuevoProveedor" name="nuevoProveedor" required> 
+                  <option value="">Selecionar proveedor</option>
+
+                  <?php
+                  $item = null;
+                  $valor = null;
+                  $categorias = ControladorProveedores::ctrMostrarProveedores($item, $valor);
+                  foreach ($categorias as $key => $value) {
+                    echo '<option value="'.$value["id_proveedor"].'">'.$value["nombre"].'</option>';
+                  }
+                  ?>
+  
+                </select>
+              </div>
+              </div>
+            <div class="form-group">
               <div class="input-group">
                 <span class="input-group-addon"><i class="fa fa-code"></i></span> 
                 <input type="text" class="form-control input-lg" id="nuevoCodigo" name="nuevoCodigo" placeholder="Ingresar código" readonly required>
