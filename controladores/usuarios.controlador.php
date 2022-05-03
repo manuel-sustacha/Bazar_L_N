@@ -19,7 +19,13 @@ class ControladorUsuarios{
 					//$passwprdEncrypt=password_hash($respuesta["password"],PASSWORD_DEFAULT);
 					if(password_verify($_POST["ingPassword"],$respuesta["password"])){
 
-						$_SESSION["iniciarSesion"] = "ok";
+							$_SESSION["iniciarSesion"] = "ok";
+						$_SESSION["id"] = $respuesta["id"];
+						$_SESSION["nombre"] = $respuesta["nombre"];
+						$_SESSION["usuario"] = $respuesta["email"];
+						$_SESSION["foto"] = "";
+						$_SESSION["perfil"] = "".$respuesta["id_rol"];
+
 
 						echo '<script>
 							window.location = "inicio";

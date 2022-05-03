@@ -1,6 +1,4 @@
-<?php
-session_start();
-?>
+<?php session_start(); ?>
 <!DOCTYPE html>
 <html>
 <head>
@@ -8,16 +6,12 @@ session_start();
   <meta charset="utf-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
 
-  <title>Inventory System</title>
+  <title>BAZAR L Y N</title>
 
   <!-- Tell the browser to be responsive to screen width -->
   <meta content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" name="viewport">
 
-  <link rel="icon" href="vistas/img/plantilla/icono-negro.png">
-
-  <!--=====================================
-  PLUGINS DE CSS
-  ======================================-->
+   <!--PLUGINS DE CSS-->
 
   <!-- Bootstrap 3.3.7 -->
   <link rel="stylesheet" href="vistas/bower_components/bootstrap/dist/css/bootstrap.min.css">
@@ -50,9 +44,7 @@ session_start();
   <!-- Morris chart -->
   <link rel="stylesheet" href="vistas/bower_components/morris.js/morris.css">
 
-  <!--=====================================
-  PLUGINS DE JAVASCRIPT
-  ======================================-->
+  <!--PLUGINS DE JAVASCRIPT-->
 
   <!-- jQuery 3 -->
   <script src="vistas/bower_components/jquery/dist/jquery.min.js"></script>
@@ -74,38 +66,36 @@ session_start();
 
   <!-- SweetAlert 2 -->
   <script src="vistas/plugins/sweetalert2/sweetalert2.all.js"></script>
-   <!-- By default SweetAlert2 doesn't support IE. To enable IE 11 support, include Promise polyfill:-->
   <script src="https://cdnjs.cloudflare.com/ajax/libs/core-js/2.4.1/core.js"></script>
-
-  <!-- iCheck 1.0.1 -->
   <script src="vistas/plugins/iCheck/icheck.min.js"></script>
-
-  <!-- InputMask -->
   <script src="vistas/plugins/input-mask/jquery.inputmask.js"></script>
   <script src="vistas/plugins/input-mask/jquery.inputmask.date.extensions.js"></script>
   <script src="vistas/plugins/input-mask/jquery.inputmask.extensions.js"></script>
+  <script src="vistas/plugins/jqueryNumber/jquerynumber.min.js"></script>
+  <script src="vistas/bower_components/moment/min/moment.min.js"></script>
+  <script src="vistas/bower_components/bootstrap-daterangepicker/daterangepicker.js"></script>
+  <script src="vistas/bower_components/raphael/raphael.min.js"></script>
+  <script src="vistas/bower_components/morris.js/morris.min.js"></script>
+  <script src="vistas/bower_components/Chart.js/Chart.js"></script>
 
 </head>
 
 <!--CUERPO DOCUMENTO-->
 
-<body class="hold-transition skin-yellow  sidebar-mini login-page">
+<body class="hold-transition skin-red sidebar-mini login-page">
  
   <?php
-//$_SESSION["iniciarSesion"] = "ok";
+
   if(isset($_SESSION["iniciarSesion"]) && $_SESSION["iniciarSesion"] == "ok"){
 
    echo '<div class="wrapper">';
 
-    /*TOP*/
-
+    
     include "modulos/top.php";
 
-    /*MENU*/
 
     include "modulos/menu.php";
 
-    /*CONTENIDO*/
 
     if(isset($_GET["ruta"])){
 
@@ -116,8 +106,6 @@ session_start();
          $_GET["ruta"] == "proveedores" ||
          $_GET["ruta"] == "clientes" ||
          $_GET["ruta"] == "ventas" ||
-         $_GET["ruta"] == "crear-venta" ||
-         $_GET["ruta"] == "reportes" ||
          $_GET["ruta"] == "salir"){
 
         include "modulos/".$_GET["ruta"].".php";
@@ -134,7 +122,6 @@ session_start();
 
     }
 
-    /*FOOTER*/
 
     include "modulos/footer.php";
 
@@ -147,41 +134,14 @@ session_start();
   }
 
   ?>
-<!---DATATABLE Y LENGUAJE--->
-<script>
-  $(document).ready( function () {
-  $('#tablas').DataTable();
-  } );
-  $('.tablas').DataTable({
+  
+<script src="vistas/js/plantilla.js"></script>
+<script src="vistas/js/usuarios.js"></script>
+<script src="vistas/js/categorias.js"></script>
+<script src="vistas/js/productos.js"></script>
+<script src="vistas/js/proveedores.js"></script>
+<script src="vistas/js/clientes.js"></script>
+<script src="vistas/js/reportes.js"></script>
 
-"language": {
-
-  "sProcessing":     "Procesando...",
-  "sLengthMenu":     "Mostrar _MENU_ registros",
-  "sZeroRecords":    "No se encontraron resultados",
-  "sEmptyTable":     "Ningún dato disponible en esta tabla",
-  "sInfo":           "Mostrando registros del _START_ al _END_ de un total de _TOTAL_",
-  "sInfoEmpty":      "Mostrando registros del 0 al 0 de un total de 0",
-  "sInfoFiltered":   "(filtrado de un total de _MAX_ registros)",
-  "sInfoPostFix":    "",
-  "sSearch":         "Buscar:",
-  "sUrl":            "",
-  "sInfoThousands":  ",",
-  "sLoadingRecords": "Cargando...",
-  "oPaginate": {
-  "sFirst":    "Primero",
-  "sLast":     "Último",
-  "sNext":     "Siguiente",
-  "sPrevious": "Anterior"
-  },
-  "oAria": {
-    "sSortAscending":  ": Activar para ordenar la columna de manera ascendente",
-    "sSortDescending": ": Activar para ordenar la columna de manera descendente"
-  }
-
-}
-
-});
-</script>
 </body>
 </html>
