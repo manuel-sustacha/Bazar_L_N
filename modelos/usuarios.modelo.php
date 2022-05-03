@@ -107,6 +107,29 @@ class ModeloUsuarios{
 		$stmt = null;
 
 	}
-	
+
+	// MODELO PARA BAJA DE USUARIOS
+	static public function mdlBorrarUsuario($tabla, $datos){
+
+		$stmt = Conexion::conectar()->prepare("DELETE FROM $tabla WHERE id_usuario = :id_usuario");
+
+		$stmt -> bindParam(":id_usuario", $datos, PDO::PARAM_INT);
+
+		if($stmt -> execute()){
+
+			return "ok";
+		
+		}else{
+
+			return "error";	
+
+		}
+
+		$stmt -> close();
+
+		$stmt = null;
+
+
+	}
 
 }
