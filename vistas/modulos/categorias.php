@@ -1,11 +1,15 @@
+<?php
+if($_SESSION["perfil"] == "Vendedor"){
+  echo '<script>
+    window.location = "inicio";
+  </script>';
+  return;
+}
+?>
 <div class="content-wrapper">
-
-  <section class="content-header">
-    
-    <h1>
-      
-      Administrar categorías
-    
+  <section class="content-header">   
+    <h1>     
+      Administrar categorías    
     </h1>
 
     <ol class="breadcrumb">
@@ -15,7 +19,6 @@
       <li class="active">Administrar categorías</li>
     
     </ol>
-
   </section>
 
   <section class="content">
@@ -38,7 +41,7 @@
          
         <thead>
          
-         <tr bgcolor="orange">
+         <tr >
            
            <th style="width:10px">#</th>
            <th>Categoria</th>

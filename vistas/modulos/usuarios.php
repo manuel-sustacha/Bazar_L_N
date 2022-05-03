@@ -1,3 +1,11 @@
+<?php
+if($_SESSION["perfil"] == "Especial" || $_SESSION["perfil"] == "Vendedor"){
+  echo '<script>
+    window.location = "inicio";
+  </script>';
+  return;
+}
+?>
 <div class="content-wrapper">
 
   <section class="content-header">
@@ -7,7 +15,6 @@
       Administrar usuarios
 
     </h1>
-
     <ol class="breadcrumb">
 
       <li><a href="#"><i class="fa fa-dashboard"></i> Inicio</a></li>
@@ -15,10 +22,7 @@
       <li class="active">Administrar Usuarios</li>
 
     </ol>
-
   </section>
-
-  <!-- Main content -->
   <section class="content">
     <div class="box">
 
@@ -37,7 +41,7 @@
 
           <thead>
 
-            <tr bgcolor="orange">
+            <tr >
 
               <th style="width:10px">#</th>
               <th>Nombre</th>
@@ -114,7 +118,6 @@
 
     </div>
   </section>
-  <!-- /.content -->
 </div>
 <!-- /.content-wrapper -->
 

@@ -1,6 +1,7 @@
-﻿<div class="login-box">
+<div id="back"></div>
+<div class="login-box"> 
   <div class="login-logo">
-    <a href="">BAZAR <b>L Y N</b></a>
+    <img src="" class="img-responsive" style="padding:30px 100px 0px 100px">
   </div>
   <div class="login-box-body">
     <p class="login-box-msg">Iniciar sesion</p>
@@ -15,23 +16,16 @@
         <span class="glyphicon glyphicon-lock form-control-feedback"></span>
       </div>
       <div class="row">
-        <div class="col-xs-8">
-        </div>
-        <!-- /.col -->
         <div class="col-xs-4">
           <button type="submit" class="btn btn-primary btn-block btn-flat btn-round">INGRESAR</button>
         </div>
-        <!-- /.col -->
       </div>
+
       <?php
         $login = new ControladorUsuarios();
-        $login -> ctrIngresoUsuario();
+        $login -> ctrIngresoUsuario();  
       ?>
+
     </form>
-
   </div>
-  <!-- /.login-box-body -->
 </div>
-
-      
-

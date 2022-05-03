@@ -2,15 +2,11 @@
 
 class ControladorCategorias{
 
-	/*=============================================
-	CREAR CATEGORIAS
-	=============================================*/
-
 	static public function ctrCrearCategoria(){
 
 		if(isset($_POST["nuevaCategoria"])){
 
-			if(preg_match('/^[a-zA-Z0-9ñÑáéíóúÁÉÍÓÚ\'\/~`\©®™\!@#\$%\^&\*\(\)_\-\+=\{\}\[\]\|;:"\<\>,\.\?\\\ ]+$/', $_POST["nuevaCategoria"])){
+			if(preg_match('/^[a-zA-Z0-9ñÑáéíóúÁÉÍÓÚ ]+$/', $_POST["nuevaCategoria"])){
 
 				$tabla = "categorias";
 
@@ -65,12 +61,8 @@ class ControladorCategorias{
 
 	}
 
-	/*=============================================
-	MOSTRAR CATEGORIAS
-	=============================================*/
 
 	static public function ctrMostrarCategorias($item, $valor){
-		//echo '<script language="javascript">alert("'.$item.'");</script>';
 
 		$tabla = "categorias";
 
@@ -79,10 +71,6 @@ class ControladorCategorias{
 		return $respuesta;
 	
 	}
-
-	/*=============================================
-	EDITAR CATEGORIA
-	=============================================*/
 
 	static public function ctrEditarCategoria(){
 
@@ -144,9 +132,6 @@ class ControladorCategorias{
 
 	}
 
-	/*=============================================
-	BORRAR CATEGORIA
-	=============================================*/
 
 	static public function ctrBorrarCategoria(){
 

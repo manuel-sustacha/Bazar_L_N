@@ -4,9 +4,6 @@ require_once "conexion.php";
 
 class ModeloCategorias{
 
-	/*=============================================
-	CREAR CATEGORIA
-	=============================================*/
 
 	static public function mdlIngresarCategoria($tabla, $datos){
 
@@ -29,15 +26,12 @@ class ModeloCategorias{
 
 	}
 
-	/*=============================================
-	MOSTRAR CATEGORIAS
-	=============================================*/
 
 	static public function mdlMostrarCategorias($tabla, $item, $valor){
 
 		if($item != null){
 
-			$stmt = Conexion::conectar()->prepare("SELECT * FROM $tabla WHERE $item = :$item ORDER BY id DESC");
+			$stmt = Conexion::conectar()->prepare("SELECT * FROM $tabla WHERE $item = :$item");
 
 			$stmt -> bindParam(":".$item, $valor, PDO::PARAM_STR);
 
@@ -61,9 +55,6 @@ class ModeloCategorias{
 
 	}
 
-	/*=============================================
-	EDITAR CATEGORIA
-	=============================================*/
 
 	static public function mdlEditarCategoria($tabla, $datos){
 
@@ -87,9 +78,6 @@ class ModeloCategorias{
 
 	}
 
-	/*=============================================
-	BORRAR CATEGORIA
-	=============================================*/
 
 	static public function mdlBorrarCategoria($tabla, $datos){
 
