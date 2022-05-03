@@ -2,13 +2,13 @@
 EDITAR CATEGORIA
 =============================================*/
 $(".tablas").on("click", ".btnEditarCategoria", function(){
-
+console.log("entro aqui");
 	var idCategoria = $(this).attr("idCategoria");
 
 	var datos = new FormData();
 	datos.append("idCategoria", idCategoria);
 
-	$.ajax({ 
+	$.ajax({
 		url: "ajax/categorias.ajax.php",
 		method: "POST",
       	data: datos,
@@ -17,7 +17,7 @@ $(".tablas").on("click", ".btnEditarCategoria", function(){
      	processData: false,
      	dataType:"json",
      	success: function(respuesta){
-
+//alert(JSON.stringify(respuesta));
      		$("#editarCategoria").val(respuesta["categoria"]);
      		$("#idCategoria").val(respuesta["id"]);
 

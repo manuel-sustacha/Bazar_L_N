@@ -4,7 +4,7 @@ class ControladorCategorias{
 
 	/*=============================================
 	CREAR CATEGORIAS
-	===============================================*/
+	=============================================*/
 
 	static public function ctrCrearCategoria(){
 
@@ -14,13 +14,9 @@ class ControladorCategorias{
 
 				$tabla = "categorias";
 
-				$nombre = $_POST["nombre"];
-				$descripcion = $_POST["descripcion"];
+				$datos = $_POST["nuevaCategoria"];
 
-				//$cadena = {};
-
-
-				$respuesta = ModeloCategorias::mdlIngresarCategoria($tabla, $cadena);
+				$respuesta = ModeloCategorias::mdlIngresarCategoria($tabla, $datos);
 
 				if($respuesta == "ok"){
 
@@ -76,7 +72,7 @@ class ControladorCategorias{
 	static public function ctrMostrarCategorias($item, $valor){
 		//echo '<script language="javascript">alert("'.$item.'");</script>';
 
-		$tabla = "categoria";
+		$tabla = "categorias";
 
 		$respuesta = ModeloCategorias::mdlMostrarCategorias($tabla, $item, $valor);
 

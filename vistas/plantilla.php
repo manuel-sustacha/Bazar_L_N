@@ -11,7 +11,11 @@
   <!-- Tell the browser to be responsive to screen width -->
   <meta content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" name="viewport">
 
-   <!--PLUGINS DE CSS-->
+  <link rel="icon" href="vistas/img/plantilla/back1.jpg">
+
+  <!--=====================================
+  PLUGINS DE CSS
+  ======================================-->
 
   <!-- Bootstrap 3.3.7 -->
   <link rel="stylesheet" href="vistas/bower_components/bootstrap/dist/css/bootstrap.min.css">
