@@ -85,27 +85,27 @@ return;
             </div>
             <div class="form-group">
               <div class="input-group">
-                <span class="input-group-addon"><i class="fa fa-code"></i></span> 
+                <span class="input-group-addon"><i class="fa fa-address-card"></i></span> 
                 <input type="text" class="form-control input-lg" id="nuevoProveedor" name="nuevoProveedor" placeholder="Ingresar nombre" required>
               </div>
             </div>
             
              <div class="form-group">  
               <div class="input-group">
-                <span class="input-group-addon"><i class="fa fa-product-hunt"></i></span> 
-                <input type="number" class="form-control input-lg" name="nuevoTelefono" placeholder="Ingresar telefono" required>
+                <span class="input-group-addon"><i class="fa fa-phone-square"></i></span> 
+                <input type="text" maxlength="10" class="form-control input-lg" name="nuevoTelefono" placeholder="Ingresar telefono" required>
               </div>
             </div>
              <div class="form-group">              
               <div class="input-group">              
-                <span class="input-group-addon"><i class="fa fa-check"></i></span>
+                <span class="input-group-addon"><i class="fa fa-map-marker"></i></span>
                 <input type="text" class="form-control input-lg" name="nuevaDireccion" min="0" placeholder="Ingresar direccion" required>
               </div>
               </div>
              <div class="form-group">              
               <div class="input-group">              
-                <span class="input-group-addon"><i class="fa fa-check"></i></span>
-                <input type="number" class="form-control input-lg" name="nuevoTelefonoRepartidor" min="0" placeholder="Ingresar telefono repartidor" required>
+                <span class="input-group-addon"><i class="fa fa-mobile"></i></span>
+                <input type="text" maxlength="10" class="form-control input-lg" name="nuevoTelefonoRepartidor" min="0" placeholder="Ingresar telefono repartidor" required>
               </div>
             </div>
           </div>
@@ -139,27 +139,27 @@ return;
           <div class="box-body">
             <div class="form-group">              
               <div class="input-group">              
-                <span class="input-group-addon"><i class="fa fa-th"></i></span> 
+                <span class="input-group-addon"><i class="fa fa-address-card"></i></span> 
                 <input type="text" class="form-control input-lg" id="editarNombre" name="editarNombre" placeholder="Ingresar nombre" required>
                 <input type="hidden" id="idProveedor" name="idProveedor">
               </div>
             </div>
             <div class="form-group">              
               <div class="input-group">              
-                <span class="input-group-addon"><i class="fa fa-code"></i></span> 
-                <input type="text" class="form-control input-lg" id="editarTelefono" name="editarTelefono" required>
+                <span class="input-group-addon"><i class="fa fa-phone-square"></i></span> 
+                <input type="text" maxlength="10" class="form-control input-lg" id="editarTelefono" name="editarTelefono" required>
               </div>
             </div>
              <div class="form-group">              
               <div class="input-group">              
-                <span class="input-group-addon"><i class="fa fa-product-hunt"></i></span> 
+                <span class="input-group-addon"><i class="fa fa-map-marker"></i></span> 
                 <input type="text" class="form-control input-lg" id="editarDireccion" name="editarDireccion" required>
               </div>
             </div>
              <div class="form-group">              
               <div class="input-group">              
-                <span class="input-group-addon"><i class="fa fa-check"></i></span> 
-                <input type="number" class="form-control input-lg" id="editarTelefonoRepartidor" name="editarTelefonoRepartidor" min="0" required>
+                <span class="input-group-addon"><i class="fa fa-mobile"></i></span> 
+                <input type="text" maxlength="10" class="form-control input-lg" id="editarTelefonoRepartidor" name="editarTelefonoRepartidor" min="0" required>
               </div>
             </div>
           </div>
