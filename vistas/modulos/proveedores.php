@@ -51,7 +51,7 @@ return;
             <td>
               <div class="btn-group"> 
                 <button class="btn btn-warning btnEditarProveedor" data-toggle="modal" data-target="#modalEditarProveedor" idProveedor="'.$value["id_proveedor"].'"><i class="fa fa-pencil"></i></button>';
-              if($_SESSION["perfil"] == "0"){
+              if($_SESSION["perfil"] == "1"){
                   echo '<button class="btn btn-danger btnEliminarProveedor" idProveedor="'.$value["id_proveedor"].'"><i class="fa fa-times"></i></button>';
               }
               echo '</div>  

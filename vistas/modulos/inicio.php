@@ -12,7 +12,7 @@
   <section class="content">
     <div class="row">
     <?php
-    if($_SESSION["perfil"] =="0"){
+    if($_SESSION["perfil"] =="1"){
       include "inicio/cajas-superiores.php";
     }
     ?>

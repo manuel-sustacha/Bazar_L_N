@@ -18,9 +18,9 @@ class ControladorProveedores{
 
 		if(isset($_POST["nuevoProveedor"])){
 
-			if(preg_match('/^[a-zA-Z0-9ñÑáéíóúÁÉÍÓÚ ]+$/', $_POST["nuevoProveedor"]) &&
+			if($_POST["nuevoProveedor"] &&
 			   preg_match('/^[0-9]+$/', $_POST["nuevoTelefono"]) &&	
-			   preg_match('/^[a-zA-Z0-9ñÑáéíóúÁÉÍÓÚ ]+$/', $_POST["nuevaDireccion"]) &&
+			   $_POST["nuevaDireccion"] &&
 			   preg_match('/^[0-9.]+$/', $_POST["nuevoTelefonoRepartidor"])){
 
 				$tabla = "proveedor";

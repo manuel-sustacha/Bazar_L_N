@@ -50,8 +50,86 @@ class ModeloUsuarios{
 		
 				$stmt = null;
 		
-			}
+	}
 
+	// MODELO EDITAR - ACTUALIZAR USUARIOS
+	/*	EDITAR */
+
+	static public function mdlEditarUsuario($tabla, $datos){
 	
+		$stmt = Conexion::conectar()->prepare("UPDATE $tabla SET id_usuario = id_usuario, nombre = :nombre, apellido = :apellido, telefono = :telefono, email = :email,  password = :password, id_rol = :id_rol WHERE id_usuario = :id_usuario");
+		$stmt -> bindParam(":id_usuario", $datos["id_usuario"], PDO::PARAM_STR);
+		$stmt -> bindParam(":nombre", $datos["nombre"], PDO::PARAM_STR);
+		$stmt -> bindParam(":apellido", $datos["apellido"], PDO::PARAM_STR);
+		$stmt -> bindParam(":telefono", $datos["telefono"], PDO::PARAM_STR);
+		$stmt -> bindParam(":password", $datos["password"], PDO::PARAM_STR);
+		$stmt -> bindParam(":id_rol", $datos["id_rol"], PDO::PARAM_STR);
+		$stmt -> bindParam(":email", $datos["email"], PDO::PARAM_STR);
+
+		if($stmt -> execute()){
+
+			return "ok";
+		
+		}else{
+
+			return "error";	
+
+		}
+
+		$stmt -> close();
+
+		$stmt = null;
+
+	}
+
+	/*	ACTUALIZAR */
+
+	static public function mdlActualizarUsuario($tabla, $item1, $valor1, $item2, $valor2){
+		
+
+		$stmt = Conexion::conectar()->prepare("UPDATE $tabla SET $item1 = :$item1 WHERE $item2 = :$item2");
+
+		$stmt -> bindParam(":".$item1, $valor1, PDO::PARAM_STR);
+		$stmt -> bindParam(":".$item2, $valor2, PDO::PARAM_STR);
+
+		if($stmt -> execute()){
+
+			return "ok";
+		
+		}else{
+
+			return "error";	
+
+		}
+
+		$stmt -> close();
+
+		$stmt = null;
+
+	}
+
+	// MODELO PARA BAJA DE USUARIOS
+	static public function mdlBorrarUsuario($tabla, $datos){
+
+		$stmt = Conexion::conectar()->prepare("DELETE FROM $tabla WHERE id_usuario = :id_usuario");
+
+		$stmt -> bindParam(":id_usuario", $datos, PDO::PARAM_INT);
+
+		if($stmt -> execute()){
+
+			return "ok";
+		
+		}else{
+
+			return "error";	
+
+		}
+
+		$stmt -> close();
+
+		$stmt = null;
+
+
+	}
 
 }
