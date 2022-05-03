@@ -5,6 +5,7 @@ $(".tablas").on("click", ".btnEditarUsuario", function(){
 	
 	var datos = new FormData();
 	datos.append("idUsuario", idUsuario);
+	
 	$.ajax({
 
 		url:"ajax/usuarios.ajax.php",
@@ -35,7 +36,8 @@ $(".tablas").on("click", ".btnActivar", function(){
 	var estadoUsuario = $(this).attr("estadoUsuario");
 	var datos = new FormData();
  	datos.append("activarId", idUsuario);
-  	datos.append("activarUsuario", estadoUsuario);	  
+  	datos.append("activarUsuario", estadoUsuario);
+	  
   	$.ajax({
 	  url:"ajax/usuarios.ajax.php",
 	  method: "POST",
@@ -43,6 +45,7 @@ $(".tablas").on("click", ".btnActivar", function(){
 	  cache: false,
       contentType: false,
       processData: false,
+	  
       success: function(respuesta){
 
       		if(window.matchMedia("(max-width:767px)").matches){
@@ -64,6 +67,7 @@ $(".tablas").on("click", ".btnActivar", function(){
 	      	}
 
       }
+
 
   	})
 

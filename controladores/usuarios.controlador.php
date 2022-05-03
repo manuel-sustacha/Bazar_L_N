@@ -57,7 +57,7 @@ class ControladorUsuarios
 				"email" => $_POST["email"],
 				"contrasena" => $encriptar,
 				"id_rol" => $_POST["rol"],
-				"estado" => $_POST["estado"]
+				"estado" => $_POST["estadoIna"]
 			);
 
 			$respuesta = ModeloUsuarios::mdlCrearUsuario($tabla, $datos);

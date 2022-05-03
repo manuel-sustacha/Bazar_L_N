@@ -37,7 +37,7 @@
 
           <thead>
 
-            <tr bgcolor="orange">
+            <tr bgcolor="">
 
               <th style="width:10px">#</th>
               <th>Nombre</th>
@@ -78,10 +78,10 @@
               }
               if ($value["estado"] != "ina") {
 
-                echo '<td><button class="btn btn-success btn-xs btnActivar" idUsuario="' . $value["id_usuario"] . '" estadoUsuario="act">ACTIVO</button></td>';
+                echo '<td><button class="btn btn-success btn-xs btnActivar" idUsuario="' . $value["id_usuario"] . '" estadoUsuario="'.$value["estado"] .'">ACTIVO</button></td>';
               } else {
 
-                echo '<td><button class="btn btn-danger btn-xs btnActivar" idUsuario="' . $value["id_usuario"] . '" estadoUsuario="ina">INACTIVO</button></td>';
+                echo '<td><button class="btn btn-danger btn-xs btnActivar" idUsuario="' . $value["id_usuario"] . '" estadoUsuario="'.$value["estado"] .'">INACTIVO</button></td>';
               }
               echo '
                   <td>
@@ -154,7 +154,7 @@
                 </select>
               </div>
               <br>
-              <input type="text" name="estado" value="ina" hidden>
+              <input type="text" name="estadoIna" value="ina" hidden>
             </div>
           </div>
         </div>
@@ -271,7 +271,6 @@
                 </select>
                 
               </div>
-
             </div>
 
           </div>
