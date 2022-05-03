@@ -186,6 +186,14 @@ return;
             </div>
             <div class="form-group">              
               <div class="input-group">              
+                <span class="input-group-addon"><i class="fa fa-th"></i></span> 
+                <select class="form-control input-lg"  name="editarProveedor" readonly required>    
+                  <option id="editarProveedor"></option>
+                </select>
+              </div>
+            </div>
+            <div class="form-group">              
+              <div class="input-group">              
                 <span class="input-group-addon"><i class="fa fa-code"></i></span> 
                 <input type="text" class="form-control input-lg" id="editarCodigo" name="editarCodigo" readonly required>
               </div>

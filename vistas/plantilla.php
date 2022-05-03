@@ -48,6 +48,9 @@
   <!-- Morris chart -->
   <link rel="stylesheet" href="vistas/bower_components/morris.js/morris.css">
 
+    <!-- Morris chart -->
+    <link rel="stylesheet" href="vistas/dist/css/custom.css">
+
   <!--PLUGINS DE JAVASCRIPT-->
 
   <!-- jQuery 3 -->

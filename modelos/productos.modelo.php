@@ -37,8 +37,8 @@ class ModeloProductos{
 
 		$stmt = Conexion::conectar()->prepare("INSERT INTO $tabla(id_proveedor,id_categoria, codigo, descripcion, imagen, stock, precio_compra, precio_venta) VALUES (:id_proveedor,:id_categoria, :codigo, :descripcion, :imagen, :stock, :precio_compra, :precio_venta)");
 
-		$stmt->bindParam(":id_categoria", $datos["id_categoria"], PDO::PARAM_INT);
 		$stmt->bindParam(":id_proveedor", $datos["id_proveedor"], PDO::PARAM_INT);
+		$stmt->bindParam(":id_categoria", $datos["id_categoria"], PDO::PARAM_INT);
 
 		$stmt->bindParam(":codigo", $datos["codigo"], PDO::PARAM_STR);
 		$stmt->bindParam(":descripcion", $datos["descripcion"], PDO::PARAM_STR);

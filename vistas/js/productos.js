@@ -87,8 +87,8 @@ $("#nuevoPrecioCompra, #editarPrecioCompra").change(function(){
 		$("#nuevoPrecioVenta").val(porcentaje);
 		$("#nuevoPrecioVenta").prop("readonly",true);
 
-		$("#editarPrecioVenta").val(editarPorcentaje);
-		$("#editarPrecioVenta").prop("readonly",true);
+
+	
 
 	}
 
@@ -206,11 +206,36 @@ $(".tablaProductos tbody").on("click", "button.btnEditarProducto", function(){
               success:function(respuesta){
                   
                   $("#editarCategoria").val(respuesta["id"]);
-                  $("#editarCategoria").html(respuesta["categoria"]);
+				  $("#editarCategoria").html(respuesta["categoria"]);
+				  
+
+              }
+
+		   })
+		  
+		  ///formulario proveedor
+		  var datosProveedor = new FormData();
+          datosProveedor.append("idProveedor",respuesta["id_proveedor"]);
+
+           $.ajax({
+
+              url:"ajax/proveedores.ajax.php",
+              method: "POST",
+              data: datosProveedor,
+              cache: false,
+              contentType: false,
+              processData: false,
+              dataType:"json",
+              success:function(respuesta){
+                  
+                  $("#editarProveedor").val(respuesta["id_proveedor"]);
+				  $("#editarProveedor").html(respuesta["nombre"]);
+				  
 
               }
 
           })
+
 
            $("#editarCodigo").val(respuesta["codigo"]);
 

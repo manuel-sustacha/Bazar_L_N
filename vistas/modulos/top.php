@@ -54,11 +54,17 @@
 					<ul class="dropdown-menu">
               <!-- User image -->
               <li class="user-header">
-                <img src="vistas/img/usuarios/default/anonymous.png" class="img-circle" alt="User Image">
+                <!-- <img src="vistas/img/usuarios/default/anonymous.png" class="img-circle" alt="User Image"> -->
+				<?php
+					if($_SESSION["foto"] != ""){
+						echo '<img src="'.$_SESSION["foto"].'" class="user-image">';
+					}else{
+						echo '<img src="vistas/img/usuarios/default/anonymous.png" class="user-image">';
+					}
+					?>
 
                 <p>
-                  Alexander Pierce - Web Developer
-                  <small>Member since Nov. 2012</small>
+				<span class="hidden-xs"><?php  echo $_SESSION["nombre"]; ?></span>
                 </p>
               </li>
               <!-- Menu Footer-->

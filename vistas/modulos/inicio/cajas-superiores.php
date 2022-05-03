@@ -15,6 +15,10 @@ $totalClientes = count($clientes);
 $productos = ControladorProductos::ctrMostrarProductos($item, $valor, $orden);
 $totalProductos = count($productos);
 
+
+$clientes = ControladorClientes::ctrMostrarClientes($item, $valor, $orden);
+$totalProductos = count($clientes);
+
 ?>
 
 
@@ -125,6 +129,33 @@ $totalProductos = count($productos);
       
       Más info <i class="fa fa-arrow-circle-right"></i>
     
+    </a>
+
+  </div>
+
+</div>
+<div class="col-lg-3 col-xs-6">
+
+  <div class="small-box bg-orange">
+    
+    <div class="inner">
+    
+      <h3><?php echo number_format($totalClientes); ?></h3>
+
+      <p>Clientes</p>
+  
+    </div>
+    
+    <div class="icon">
+    
+      <i class="ion ion-person-add"></i>
+    
+    </div>
+    
+    <a href="clientes" class="small-box-footer">
+
+      Más info <i class="fa fa-arrow-circle-right"></i>
+
     </a>
 
   </div>
