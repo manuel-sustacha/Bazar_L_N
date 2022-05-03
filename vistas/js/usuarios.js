@@ -71,7 +71,7 @@ $(".tablas").on("click", ".btnActivar", function(){
 
   	})
 
-  	if(estadoUsuario == 'act'){
+  	if(estadoUsuario == 'ina'){
 
   		$(this).removeClass('btn-success');
   		$(this).addClass('btn-danger');

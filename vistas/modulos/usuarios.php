@@ -78,10 +78,10 @@
               }
               if ($value["estado"] != "ina") {
 
-                echo '<td><button class="btn btn-success btn-xs btnActivar" idUsuario="' . $value["id_usuario"] . '" estadoUsuario="'.$value["estado"] .'">ACTIVO</button></td>';
+                echo '<td><button class="btn btn-success btn-xs btnActivar" idUsuario="' . $value["id_usuario"] . '" estadoUsuario="ina">ACTIVO</button></td>';
               } else {
 
-                echo '<td><button class="btn btn-danger btn-xs btnActivar" idUsuario="' . $value["id_usuario"] . '" estadoUsuario="'.$value["estado"] .'">INACTIVO</button></td>';
+                echo '<td><button class="btn btn-danger btn-xs btnActivar" idUsuario="' . $value["id_usuario"] . '" estadoUsuario="act">INACTIVO</button></td>';
               }
               echo '
                   <td>
