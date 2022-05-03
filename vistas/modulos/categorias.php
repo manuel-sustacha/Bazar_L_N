@@ -38,7 +38,7 @@
          
         <thead>
          
-         <tr bgcolor="orange">
+         <tr>
            
            <th style="width:10px">#</th>
            <th>Categoria</th>
