@@ -42,12 +42,12 @@
 				</a>
 			</li>
 
-			<li>
+		<!-- 	<li>
 				<a href="ventas">
 					<i class="fa fa-list-ul"></i>
 					<span>Ventas</span>
 				</a>
-			</li>
+			</li> -->
 
 			<li>
 				<a href="reportes">
