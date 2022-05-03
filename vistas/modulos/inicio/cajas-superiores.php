@@ -4,12 +4,12 @@ $item = null;
 $valor = null;
 $orden = "id";
 
-$ventas = ControladorVentas::ctrSumaTotalVentas();
+/* $ventas = ControladorVentas::ctrSumaTotalVentas(); */
 
 $categorias = ControladorCategorias::ctrMostrarCategorias($item, $valor);
 $totalCategorias = count($categorias);
 
-$clientes = ControladorClientes::ctrMostrarClientes($item, $valor);
+$clientes = ControladorProveedores::ctrMostrarProveedores($item, $valor);
 $totalClientes = count($clientes);
 
 $productos = ControladorProductos::ctrMostrarProductos($item, $valor, $orden);
@@ -19,7 +19,7 @@ $totalProductos = count($productos);
 
 
 
-<div class="col-lg-3 col-xs-6">
+<!-- <div class="col-lg-3 col-xs-6">
 
   <div class="small-box bg-aqua">
     
@@ -45,7 +45,7 @@ $totalProductos = count($productos);
 
   </div>
 
-</div>
+</div> -->
 
 <div class="col-lg-3 col-xs-6">
 
@@ -83,7 +83,7 @@ $totalProductos = count($productos);
     
       <h3><?php echo number_format($totalClientes); ?></h3>
 
-      <p>Clientes</p>
+      <p>Proveedor</p>
   
     </div>
     
